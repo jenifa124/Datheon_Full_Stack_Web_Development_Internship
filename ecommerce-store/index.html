@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Commerce Store | Product Catalog & Cart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Shop<span>Hub</span></div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search products..." />
+      </div>
+      <button class="cart-btn" id="cartToggle" aria-label="Open cart">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 6h15l-1.5 9h-12z" />
+          <circle cx="9" cy="20" r="1" />
+          <circle cx="18" cy="20" r="1" />
+          <path d="M6 6L5 3H2" />
+        </svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Category Filters -->
+    <section class="filters">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="electronics">Electronics</button>
+      <button class="filter-btn" data-category="jewelery">Jewelry</button>
+      <button class="filter-btn" data-category="clothing">Clothing</button>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="products-section">
+      <div class="products-header">
+        <h1>Products</h1>
+        <p id="productCount">Loading...</p>
+      </div>
+      <div class="products-grid" id="productsGrid">
+        <!-- Product cards injected by JS -->
+      </div>
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Loading products...</p>
+      </div>
+      <div class="empty-state" id="emptyState" hidden>
+        <p>No products found.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Slide-out Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h2>Shopping Cart</h2>
+      <button class="close-btn" id="closeCart" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items injected by JS -->
+    </div>
+    <div class="cart-summary" id="cartSummary">
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span id="subtotal">$0.00</span>
+      </div>
+      <div class="summary-row">
+        <span>Tax (8%)</span>
+        <span id="tax">$0.00</span>
+      </div>
+      <div class="summary-row">
+        <span>Shipping</span>
+        <span id="shipping">$0.00</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span>
+        <span id="total">$0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn" disabled>Proceed to Checkout</button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Checkout Modal -->
+  <div class="modal" id="checkoutModal" hidden>
+    <div class="modal-content">
+      <button class="close-btn modal-close" id="closeModal">&times;</button>
+      <div class="modal-body" id="modalBody">
+        <!-- Content injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
