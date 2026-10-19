@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">PRODUCTIVITY TRACKER</p>
+        <h1>Dynamic Task Manager</h1>
+        <p class="subtitle">Organize your work, personal tasks, and study goals.</p>
+      </div>
+      <div class="progress-card">
+        <span id="progressText">0% complete</span>
+        <div class="progress-track"><div id="progressBar"></div></div>
+      </div>
+    </header>
+
+    <section class="panel" aria-labelledby="addHeading">
+      <h2 id="addHeading">Add a task</h2>
+      <form id="taskForm">
+        <label class="sr-only" for="taskTitle">Task name</label>
+        <input id="taskTitle" type="text" placeholder="What do you need to do?" required maxlength="120">
+        <label class="sr-only" for="taskCategory">Category</label>
+        <select id="taskCategory">
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Study">Study</option>
+        </select>
+        <label class="sr-only" for="taskDueDate">Due date</label>
+        <input id="taskDueDate" type="date">
+        <button class="primary-button" type="submit">Add Task</button>
+      </form>
+    </section>
+
+    <section class="task-section" aria-labelledby="tasksHeading">
+      <div class="section-heading">
+        <div>
+          <h2 id="tasksHeading">Your tasks</h2>
+          <p id="taskCount">0 tasks</p>
+        </div>
+        <label class="search-box">
+          <span class="sr-only">Search tasks</span>
+          <input id="searchInput" type="search" placeholder="Search tasks...">
+        </label>
+      </div>
+
+      <div class="toolbar" role="group" aria-label="Filter tasks by status">
+        <button class="filter-button active" data-filter="All" type="button">All</button>
+        <button class="filter-button" data-filter="Active" type="button">Active</button>
+        <button class="filter-button" data-filter="Completed" type="button">Completed</button>
+      </div>
+
+      <div id="taskList" class="task-list" aria-live="polite"></div>
+      <p id="emptyState" class="empty-state">No tasks yet. Add your first task above.</p>
+    </section>
+    <footer>Tasks are saved in this browser using localStorage.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
