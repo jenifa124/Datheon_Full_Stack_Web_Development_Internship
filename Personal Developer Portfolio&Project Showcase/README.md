@@ -52,4 +52,13 @@ Personal Developer Portfolio&project Showcase/
    git init
    git add .
    git commit -m "task 1"
-   git push 
+   git push
+
+## Author
+
+**Most. Jenifa Akter**
+
+## License
+
+This project is available for educational and personal use.
+   
