@@ -69,3 +69,10 @@ No build step or dependencies required. Internet connection is needed to load pr
 ## Expected Deliverable
 
 Functional e-commerce store with category filtering, cart calculations, and responsive product grids.
+## Author
+
+**Most. Jenifa Akter**
+
+## License
+
+This project is available for educational and personal use.
